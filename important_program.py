@@ -47,6 +47,6 @@ def test_ref(browser_page):
 # Developer intent, part 4. Sampling vs wide nets (approvals)
 
 # Domain, expert. Why oh why this?
-# Domain, expert. Real and real boundaries.
+# Domain, expert. Real and real boundaries. Both >3999 and simplified Roman numerals.
 
 # References. Answers aren't as simple as you think.
