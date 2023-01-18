@@ -66,8 +66,8 @@ pytest --approvaltests-use-reporter='PythonNative'
 
 ## Surprises in Domain Rules
 
-![clock-sample.png](4 is IIII not IV because of King Louis XIV of France)
+![https://github.com/exploratory-testing-academy/do-a-thing-and-call-it-foo-solution/blob/main/clock-sample.png?raw=true](4 is IIII not IV because of King Louis XIV of France)
 
-![excel.png](Tradional and simplified Roman numerals because of Excel)
+![https://github.com/exploratory-testing-academy/do-a-thing-and-call-it-foo-solution/blob/main/excel.png?raw=true](Tradional and simplified Roman numerals because of Excel)
 
-![knowtheromans.png](Numbers above 3999 because of Know the Romans -website)
+![https://github.com/exploratory-testing-academy/do-a-thing-and-call-it-foo-solution/blob/main/knowtheromans.png?raw=true](Numbers above 3999 because of Know the Romans -website)
