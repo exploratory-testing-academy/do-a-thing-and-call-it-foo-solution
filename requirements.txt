@@ -1,0 +1,5 @@
+pytest
+approvaltests
+pytest-approvaltests
+playwright
+xlrd
