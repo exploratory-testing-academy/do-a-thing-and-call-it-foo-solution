@@ -38,6 +38,7 @@ def test_all_on_browser(browser_page):
 # Developer intent, part 2. Rules of behavior boundaries
 # Developer intent, part 3. Coverage (pytest --cov=important_program important_program.py)
 # Developer intent, part 4. Sampling vs wide nets (approvals)
+# Developer intent, part 5. Properties
 
 # Domain, laymen. Why oh why this?
 # Domain, laymen. Rules. More rules.
