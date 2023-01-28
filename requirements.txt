@@ -3,3 +3,4 @@ approvaltests
 pytest-approvaltests
 playwright
 xlrd
+assertpy
