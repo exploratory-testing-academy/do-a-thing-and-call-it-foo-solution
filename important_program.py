@@ -45,6 +45,7 @@ def test_ref(browser_page):
 # Checklist of things NOT INCLUDED in the tests so far:
 
 # Developer intent, part 4. Sampling vs wide nets (approvals)
+# Developer intent, part 5. Properties
 
 # Domain, expert. Why oh why this?
 # Domain, expert. Real and real boundaries. Both >3999 and simplified Roman numerals.
