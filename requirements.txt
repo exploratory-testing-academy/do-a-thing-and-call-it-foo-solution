@@ -2,5 +2,6 @@ pytest
 approvaltests
 pytest-approvaltests
 playwright
+pytest-playwright
 xlrd
 assertpy
