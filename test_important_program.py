@@ -47,3 +47,44 @@ def test_four_is_IV():
 
 def test_snapshot():
     assert_that(roman(4)).snapshot(id='roman of 4')
+
+
+import hypothesis.strategies as st
+from hypothesis import given
+
+SYMBOLS = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000,
+}
+
+@given(st.integers(min_value=1, max_value=3999))
+def test_all_numerals_in_set_of_roman_numerals(num):
+    numeral = roman(num)
+    assert set(numeral) and set(numeral) <= set(SYMBOLS.keys())
+
+@given(numeral_value=st.sampled_from(tuple(SYMBOLS.items())))
+def test_generate_numerals_in_symbols(numeral_value):
+    numeral, value = numeral_value
+    assert roman(value) == numeral
+
+SUBTRACTIVE_SYMBOLS = {
+    "IV": 4,
+    "IX": 9,
+    "XL": 40,
+    "XC": 90,
+    "CD": 400,
+    "CM": 900,
+}
+
+@given(numeral_value=st.sampled_from(tuple(SUBTRACTIVE_SYMBOLS.items())))
+def test_generate_subtractive_numerals(numeral_value):
+    numeral, value = numeral_value
+    assert roman(value) == numeral
+
+
+

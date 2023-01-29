@@ -9,6 +9,7 @@ The exercise covers a checklist of steps:
 * Developer intent, part 2. Rules of behavior boundaries
 * Developer intent, part 3. Coverage (pytest --cov=important_program important_program.py)
 * Developer intent, part 4. Sampling vs wide nets (approvals)
+* Developer intent, part 5. Properties
 * Domain, laymen. Why oh why this?
 * Domain, laymen. Rules. More rules.
 * Domain, expert. Why oh why this?
@@ -54,7 +55,7 @@ pytest important_program.py
 
 ```bash
 #!/bin/bash
-pytest --cov=important_program important_program.py
+pytest --cov=important_program test_important_program.py
 ```
 
 ### For starting approvaltests with a good reporter
@@ -63,6 +64,12 @@ pytest --cov=important_program important_program.py
 #!/bin/bash
 pytest --approvaltests-use-reporter='PythonNative'
 ```
+
+### Running hypothesis tests
+
+```bash
+#!/bin/bash
+pytest -s --hypothesis-verbosity=debug test_important_program.py::test_hypothesis
 
 ## Surprises in Domain Rules
 
