@@ -44,3 +44,6 @@ def test_four_is_IV():
     with soft_assertions():
         #assert_that(roman(4)).is_equal_to('IIII')
         assert_that(roman(4)).is_equal_to('IV')
+
+def test_snapshot():
+    assert_that(roman(4)).snapshot(id='roman of 4')
