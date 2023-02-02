@@ -25,29 +25,49 @@ def test_error2(num):
 from helpers.numeral_ref import NumeralRefPage as r
 
 def test_ref(browser_page):
-    assert r(browser_page).numeral_ref(3999) == 'MMMCMXCIX'
+    assert r(browser_page).numeral_ref(3999) == roman(3999)
 
+# Bug: largest supported value should not be 3999, needs to extend to larger numbers
+def test_locking_4000_requires_new_font(browser_page):
+    with pytest.raises(ValueError):
+        assert r(browser_page).numeral_ref(4000) == roman(4000)
 
-# Checklist of things NOT INCLUDED in the tests so far:
+def numbers_list(start, stop):
+    num_list = []
+    for i in range(start, stop + 1):
+        num_list.append(i)
+    return num_list
 
-# Developer intent, part 4. Sampling vs wide nets (approvals)
-# Developer intent, part 5. Properties
+from approvaltests.combination_approvals import verify_all_combinations
 
-# Domain, expert. Why oh why this?
-# Domain, expert. Real and real boundaries. Both >3999 and simplified Roman numerals.
+def test_all_but_one():
+    verify_all_combinations(roman, [
+        numbers_list(2, 3999)])
 
-# References. Answers aren't as simple as you think.
+def test_excel(): # or whatever
+    verify_all_combinations(roman, [
+        numbers_list(1, 3999)])
 
 from assertpy import soft_assertions, assert_that
 
 def test_four_is_IV():
     with soft_assertions():
-        #assert_that(roman(4)).is_equal_to('IIII')
+  #      assert_that(roman(4)).is_equal_to('IIII')
         assert_that(roman(4)).is_equal_to('IV')
+
+def test_one_to_five():
+    with soft_assertions():
+        assert_that(roman(1)).is_equal_to('I')
+        assert_that(roman(2)).is_equal_to('II')
+        assert_that(roman(3)).is_equal_to('III')
+        assert_that(roman(4)).is_equal_to('IV')
+        assert_that(roman(5)).is_equal_to('V')
 
 def test_snapshot():
     assert_that(roman(4)).snapshot(id='roman of 4')
 
+def test_snapshot_50():
+    assert_that(roman(50)).snapshot(id="roman of 50")
 
 import hypothesis.strategies as st
 from hypothesis import given
