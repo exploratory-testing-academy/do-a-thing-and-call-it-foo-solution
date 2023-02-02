@@ -51,6 +51,13 @@ VSCode extensions:
 pytest important_program.py
 ```
 
+### Run some tests with a pattern
+
+```bash
+#!/bin/bash
+pytest -k locking
+```
+
 ### Run tests under coverage
 
 ```bash
