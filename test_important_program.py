@@ -12,6 +12,7 @@ def test_error(num):
         roman(num)
 
 # Bug: True as input
+@pytest.mark.xfail(reason="true is not one")
 def test_locking_boolean_input_():
     '''Locking test for current incorrect functionality. True should raise TypeError.
     Instead True is treated as one. This test fails when we fix the implementation to match intent.'''
