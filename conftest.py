@@ -14,8 +14,9 @@ def open_to_url(browser_page: Page):
 
 
 from approvaltests import set_default_reporter
-from approvaltests.reporters import DiffReporter
+from approvaltests.reporters import DiffReporter, quiet_reporter
 
 @pytest.fixture(scope="session")
 def reporter():
-    set_default_reporter(DiffReporter())
+    #set_default_reporter(DiffReporter())
+    set_default_reporter(quiet_reporter)

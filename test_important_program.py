@@ -28,6 +28,7 @@ def test_ref(browser_page):
     assert r(browser_page).numeral_ref(3999) == roman(3999)
 
 # Bug: largest supported value should not be 3999, needs to extend to larger numbers
+@pytest.mark.xfail(reason="Value of 4000 should be valid")
 def test_locking_4000_requires_new_font(browser_page):
     with pytest.raises(ValueError):
         assert r(browser_page).numeral_ref(4000) == roman(4000)
