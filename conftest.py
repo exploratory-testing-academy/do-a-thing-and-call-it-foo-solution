@@ -11,12 +11,3 @@ def browser_page(browser: Browser):
 def open_to_url(browser_page: Page):
     browser_page.goto('https://www.knowtheromans.com/roman-numerals/')
     return browser_page
-
-
-from approvaltests import set_default_reporter
-from approvaltests.reporters import DiffReporter, quiet_reporter
-
-@pytest.fixture(scope="session")
-def reporter():
-    #set_default_reporter(DiffReporter())
-    set_default_reporter(quiet_reporter)

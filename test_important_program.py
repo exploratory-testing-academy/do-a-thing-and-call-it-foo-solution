@@ -25,11 +25,12 @@ def test_error2(num):
 
 from helpers.numeral_ref import NumeralRefPage as r
 
+@pytest.mark.xfail(reason="Reference page no longer up and running")
 def test_ref(browser_page):
     assert r(browser_page).numeral_ref(3999) == roman(3999)
 
 # Bug: largest supported value should not be 3999, needs to extend to larger numbers
-@pytest.mark.xfail(reason="Value of 4000 should be valid")
+@pytest.mark.xfail(reason="Value of 4000 should be valid and page is no longer up")
 def test_locking_4000_requires_new_font(browser_page):
     with pytest.raises(ValueError):
         assert r(browser_page).numeral_ref(4000) == roman(4000)
@@ -41,10 +42,8 @@ def numbers_list(start, stop):
     return num_list
 
 from approvaltests.combination_approvals import verify_all_combinations
-from approvaltests import set_default_reporter
-from approvaltests.reporters import DiffReporter
 
-def test_all_but_one(reporter):
+def test_all_but_one():
     verify_all_combinations(roman, [
         numbers_list(2, 3999)])
 
